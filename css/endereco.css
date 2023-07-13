@@ -1,0 +1,12 @@
+.endereco img{
+    width: 0.9em;
+    margin: 0 0.3em 0.25em 0;
+}
+
+#validationCustom11,
+#validationCustom12,
+#validationCustom13,
+#validationCustom14{
+    background-color: rgb(241, 241, 241);
+    border: 0.5px solid rgb(205, 205, 205);
+}
