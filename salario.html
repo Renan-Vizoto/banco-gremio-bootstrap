@@ -10,6 +10,7 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="shortcut icon" href="/img/logo.ico" type="image/x-icon">
     <script src="/js/script.js" defer></script>
+    <script src="/js/formatacao.js" defer></script>
     <title>Banco Grêmio</title>
 </head>
 
@@ -30,23 +31,21 @@
         <div class="cadastro">
             <div class="cadastro__pai endereco">
                 <h2><img src="/img/house-fill.svg">Salário</h2>
-                <form class="row g-3 needs-validation" novalidate>
 
+                <form class="row g-3 needs-validation" novalidate>
                     <div class="col-md-6">
                         <label for="validationCustom16" class="form-label fs">Salário Atual</label>
-                        <input type="text" class="form-control p-2" id="validationCustom16" required>
-                        <div class="valid-feedback"></div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="validationCustomUsername" class="form-label fs">Crédito Inicial</label>
                         <div class="input-group has-validation">
                           <span class="input-group-text" id="inputGroupPrepend">R$</span>
-                          <input type="text" class="form-control p-2" id="validationCustomUsername" aria-describedby="inputGroupPrepend" readonly required>
-                          <div class="invalid-feedback">
-                            Please choose a username.
-                          </div>
+                          <input type="number" class="form-control p-2" id="validationCustom16" required>
+                          <div class="valid-feedback"></div>
                         </div>
-                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom17" class="form-label fs">Crédito Inicial</label>
+                        <input type="number" class="form-control p-2" id="validationCustom17" readonly required>
+                        <div class="valid-feedback"></div>
+                    </div>
                     <div class="mb-3">
                         <label for="formFile" class="form-label fs">Último Olerite</label>
                         <input class="form-control" type="file" id="formFile">

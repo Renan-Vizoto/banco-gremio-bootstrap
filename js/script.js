@@ -18,13 +18,14 @@
   })
 })()
 
+
+
+
 //Mascara CEP
 let formataCep = document.getElementById('validationCustom10')
 formataCep.addEventListener("input", function () {
   formatarCEP(formataCep)
 });
-
-
 //////////////////////////////////////////  FUNCOES  ///////////////////////////////////////////
 //Chama CEP
 document.getElementById('validationCustom10').addEventListener('blur', chamaAPI);
