@@ -131,31 +131,18 @@ function calculaIdade() {
     calculaDataNasc.classList.remove('is-invalid')
   }
 
-  console.log(idadeAnos )
+  console.log(idadeAnos)
 }
 
-form.document.addEventListener('submit', function(event) {
+form.document.addEventListener('submit', function (event) {
   let dataNasc = new Date(calculaDataNasc.value);
   const idadeMilissegundos = dataAtual - dataNasc;
   const idadeAnos = Math.floor(idadeMilissegundos / (365.25 * 24 * 60 * 60 * 1000));
-  
+
   if (idadeAnos.valueOf < 18) {
     event.preventDefault();
     calculaDataNasc.classList.add('is-invalid');
     form.classList.remove('was-validated');
+    console.log('aa')
   }
 });
-
-
-//////////////////////////////////////////////////////// Crédito
-function calcCredito() {
-  let valor = document.getElementById('validationCustom16').value;
-  let credito = parseFloat(valor) * 0.4;
-
-  if (!isNaN(credito)) {
-    credito = credito.toFixed(2).replace('.', ',');
-    document.getElementById('validationCustom17').value = `R$ ${credito}`;
-  }
-}
-
-document.getElementById('validationCustom16').addEventListener('input', calcCredito);
