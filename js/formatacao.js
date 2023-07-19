@@ -81,6 +81,7 @@ const inputDate = document.getElementById('validationCustom04');
 const minDate = new Date('1900-01-01');
 const maxDate = new Date();
 
+
 inputDate.addEventListener('input', function () {
   const selectedDate = new Date(inputDate.value);
 
@@ -139,10 +140,13 @@ form.document.addEventListener('submit', function (event) {
   const idadeMilissegundos = dataAtual - dataNasc;
   const idadeAnos = Math.floor(idadeMilissegundos / (365.25 * 24 * 60 * 60 * 1000));
 
-  if (idadeAnos.valueOf < 18) {
+  if (idadeAnos < 18) {
     event.preventDefault();
     calculaDataNasc.classList.add('is-invalid');
     form.classList.remove('was-validated');
-    console.log('aa')
+    console.log('aa');
+  }
+  else{
+    calculaDataNasc.classList.remove('is-invalid');
   }
 });

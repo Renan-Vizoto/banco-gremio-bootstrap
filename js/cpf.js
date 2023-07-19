@@ -22,7 +22,7 @@ function validarCPF(cpf) {
     cpf == "77777777777" ||
     cpf == "88888888888" ||
     cpf == "99999999999") {
-    alert('CPF Inválido')
+    alert('CPF Inválido');
     validade = 0;
     strCPF.classList.add('is-invalid')
     return;
@@ -66,6 +66,7 @@ form.addEventListener('submit', function (event) {
   if (validade == 0) {
     event.preventDefault();
     strCPF.classList.add('is-invalid');
+    form.classList.remove('was-validated');
   }
   else{
     strCPF.classList.remove('is-invalid');
