@@ -7,3 +7,6 @@ function calcCredito() {
 
   document.getElementById('validationCustom17').value = `R$ ${credito}`
 }
+
+
+//////////////////////////////////////////  FUNCOES  ///////////////////////////////////////////

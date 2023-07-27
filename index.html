@@ -21,8 +21,8 @@
 
     <section class="cadastro__cliente">
         <h1 class="cadastro__cliente__titulo">Cadastro de Usuário</h1>
-        <!-- <a href="/endereco.html">endereco</a>
-        <a href="/salario.html">salario</a> -->
+        <a href="/endereco.html">endereco</a>
+        <a href="/salario.html">salario</a>
         <div class="info">
             <img src="/img/exclamation-circle-fill.svg">
             <p>Escreva somente letras ou números, caracteres especiais são preenchidos automaticamente.</p>
@@ -36,51 +36,62 @@
                     <div class="col-md-6">
                         <label for="validationCustom01" class="form-label fs">Nome</label>
                         <input type="text" placeholder="Ex: Izabella" class="form-control p-2" id="validationCustom01"
-                            minlength="3" maxlength="20" required>
+                            minlength="3" maxlength="20" required data-input="input-nome">
                         <div class="valid-feedback"></div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom02" class="form-label fs">Sobrenome</label>
                         <input type="text" placeholder="Ex: Vizoto" class="form-control p-2" id="validationCustom02"
-                            minlength="2" maxlength="50" required>
+                            minlength="2" maxlength="50" required data-input="input-sobrenome">
                         <div class="valid-feedback"></div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom03" class="form-label fs">CPF</label>
                         <input type="text" placeholder="Ex: 123.123.123-12" class="form-control p-2"
-                            id="validationCustom03" required>
+                            id="validationCustom03" required data-input="input-cpf">
                         <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">CPF Inválido.</div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom04" class="form-label fs">Data de Nascimento</label>
-                        <input type="date" class="form-control p-2" id="validationCustom04" required>
+                        <input type="date" class="form-control p-2" id="validationCustom04" required
+                            data-input="input-dataNasc">
                         <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Apenas maiores de 18 anos.</div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom05" class="form-label fs">E-mail</label>
                         <input type="email" placeholder="Ex: joao@gmail.com" class="form-control p-2"
-                            id="validationCustom05" required>
+                            id="validationCustom05" required data-input="input-email">
                         <div class="valid-feedback"></div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom06" class="form-label fs">Senha</label>
-                        <input type="password" class="form-control p-2" id="validationCustom06" required>
+                        <input type="password" class="form-control p-2" id="validationCustom06" required
+                            data-input="input-senha" minlength="8" maxlength="20">
                         <div class="valid-feedback"></div>
+                        <div class="col-auto">
+                            <span id="passwordHelpInline" class="form-text">
+                                Deve conter entre 8-20 caracteres.
+                            </span>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom07" class="form-label fs">Confirmar Senha</label>
-                        <input type="password" class="form-control p-2" id="validationCustom07" required>
+                        <input type="password" class="form-control p-2" id="validationCustom07" required
+                            data-input="input-confirmaSenha" minlength="8" maxlength="20">
                         <div class="valid-feedback"></div>
+                        <div class="invalid-feedback" id="senha-diferente"></div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom08" class="form-label fs">Número de Celular</label>
                         <input type="text" placeholder="Ex: (15) 11111-1111" class="form-control p-2"
-                            id="validationCustom08" required>
+                            id="validationCustom08" required data-input="input-celular" minlength="15">
                         <div class="valid-feedback"></div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom09" class="form-label fs">Sexo</label>
-                        <select class="form-select p-2" id="validationCustom09" required>
+                        <select class="form-select p-2" id="validationCustom09" required data-input="select-sexo">
                             <option selected disabled value="">Escolha...</option>
                             <option value="1">Feminino</option>
                             <option value="2">Masculino</option>
@@ -92,7 +103,7 @@
 
 
                     <div class="col-12 d-flex justify-content-center">
-                        <button class="btn btn-primary mt-4" type="submit">Próximo</button>
+                        <button class="btn btn-primary mt-4" type="submit" data-input="botao-proximo1">Próximo</button>
                     </div>
                 </form>
             </div>

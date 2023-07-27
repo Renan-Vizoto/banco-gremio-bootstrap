@@ -21,8 +21,8 @@
 
     <section class="cadastro__cliente">
         <h1 class="cadastro__cliente__titulo">Cadastro de Usuário</h1>
-        <!-- <a href="/index.html">perfil</a>
-        <a href="/endereco.html">endereco</a> -->
+        <a href="/index.html">perfil</a>
+        <a href="/endereco.html">endereco</a>
         <div class="info">
             <img src="/img/exclamation-circle-fill.svg">
             <p>Escreva somente letras ou números, caracteres especiais são preenchidos automaticamente.</p>
@@ -37,7 +37,7 @@
                         <label for="validationCustom16" class="form-label fs">Salário Atual</label>
                         <div class="input-group has-validation">
                           <span class="input-group-text" id="inputGroupPrepend">R$</span>
-                          <input type="number" class="form-control p-2" id="validationCustom16" max="100000" required>
+                          <input type="number" class="form-control p-2" id="validationCustom16" max="100000" required data-input="salario">
                           <div class="valid-feedback"></div>
                         </div>
                     </div>
@@ -48,19 +48,19 @@
                     </div>
                     <div class="mb-3">
                         <label for="formFile" class="form-label fs">Último Holerite</label>
-                        <input class="form-control" type="file" id="formFile" required>
+                        <input class="form-control" type="file" id="formFile">
                     </div>
 
                     <div class="col-12">
                         <div class="form-check d-flex justify-content-center gap-2">
-                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required data-input="termos">
                             <label class="form-check-label" for="invalidCheck">
                                 Agree to terms and conditions
                             </label>
                         </div>
                     </div>
                     <div class="col-12 d-flex justify-content-center">
-                        <button class="btn btn-primary" type="submit">Cadastrar-se</button>
+                        <button class="btn btn-primary" type="submit" data-input="cadastro">Cadastrar-se</button>
                     </div>
                 </form>
             </div>

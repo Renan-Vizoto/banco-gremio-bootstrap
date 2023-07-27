@@ -10,6 +10,7 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="shortcut icon" href="/img/logo.ico" type="image/x-icon">
     <script src="/js/script.js" defer></script>
+    <script src="/js/cep.js" defer></script>
     <title>Banco Grêmio</title>
 </head>
 
@@ -20,8 +21,8 @@
 
     <section class="cadastro__cliente">
         <h1 class="cadastro__cliente__titulo">Cadastro de Usuário</h1>
-        <!-- <a href="/index.html">perfil</a>
-        <a href="/salario.html">salario</a> -->
+        <a href="/index.html">perfil</a>
+        <a href="/salario.html">salario</a>
         <div class="info">
             <img src="/img/exclamation-circle-fill.svg">
             <p>Escreva somente letras ou números, caracteres especiais são preenchidos automaticamente.</p>
@@ -34,7 +35,7 @@
 
                     <div class="col-md-6">
                         <label for="validationCustom10" class="form-label fs">Cep</label>
-                        <input type="text" class="form-control p-2" id="validationCustom10" required>
+                        <input type="text" class="form-control p-2" id="validationCustom10" required data-input="cep">
                         <div class="valid-feedback"></div>
                     </div>
                     <div class="col-md-6">
@@ -59,12 +60,12 @@
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom15" class="form-label fs">Numero</label>
-                        <input type="text" class="form-control p-2" id="validationCustom15" required>
+                        <input type="text" class="form-control p-2" id="validationCustom15" required data-input="numero-casa">
                         <div class="valid-feedback"></div>
                     </div>
 
                     <div class="col-12 d-flex justify-content-center">
-                        <button class="btn btn-primary mt-4" type="submit">Próximo</button>
+                        <button class="btn btn-primary mt-4" type="submit" data-input="botao-proximo2">Próximo</button>
                     </div>
                 </form>
             </div>
