@@ -55,14 +55,14 @@ inputSobrenome.addEventListener("keypress", function (novoSobrenome) {
     novoSobrenome.preventDefault();
   }
 
-  if (/[\s]/.test(key) && inputNome.value[inputNome.value.length - 1] === " ") {
-    novoNome.preventDefault();
+  if (/[\s]/.test(key) && inputSobrenome.value[inputSobrenome.value.length - 1] === " ") {
+    novoSobrenome.preventDefault();
   };
 
   //repeticao letra
-  if (inputNome.value[inputNome.value.length - 1] === inputNome.value[inputNome.value.length - 2]
-    && key === inputNome.value[inputNome.value.length - 1]) {
-    novoNome.preventDefault();
+  if (inputSobrenome.value[inputSobrenome.value.length - 1] === inputSobrenome.value[inputSobrenome.value.length - 2]
+    && key === inputSobrenome.value[inputSobrenome.value.length - 1]) {
+    novoSobrenome.preventDefault();
   };
 });
 
@@ -92,16 +92,16 @@ function formatarCel() {
 }
 
 formataCel.addEventListener('blur', () => {
-  if(formataCel.value.length < 15){
+  if (formataCel.value.length < 15 || formataCel.value[5] !== '9') {
     formataCel.classList.add('is-invalid')
   }
-  else{
+  else {
     formataCel.classList.remove('is-invalid')
   }
 });
 
 form.addEventListener('submit', (event) => {
-  if(formataCel.value.length < 15){
+  if (formataCel.value.length < 15 || formataCel.value[5] !== '9') {
     event.preventDefault();
     formataCel.classList.add('is-invalid')
     form.classList.remove('was-validated');
@@ -112,10 +112,10 @@ form.addEventListener('submit', (event) => {
 const email = document.getElementById('validationCustom05')
 email.addEventListener('keypress', (event) => {
   emailTest = email.value
-  if(/[\s]/.test(emailTest)){
+  if (/[\s]/.test(emailTest)) {
     email.classList.add('is-invalid')
   }
-  else{
+  else {
     email.classList.remove('is-invalid')
   }
 });
@@ -149,25 +149,22 @@ const regexCaracterEspecial = /[\W_]/;
 
 senhav.addEventListener('blur', () => {
   const senha = senhav.value
-  if(
+  const spanSenha = document.getElementById('span-senha')
+  if (
     regexLetraMaiuscula.test(senha) &&
     regexLetraMinuscula.test(senha) &&
     regexNumero.test(senha) &&
     regexCaracterEspecial.test(senha)
-  ){
+  ) {
     senhav.classList.remove('is-invalid');
   }
-  else{
+  else {
     senhav.classList.add('is-invalid');
-  }
-});
-
-senhav.addEventListener('blur', function () {
+    spanSenha.style.display = 'none';
+  };
   if (senhav.value.length < 8 || senhav.value.length > 20) {
     senhav.classList.add('is-invalid');
-  }
-  else{
-    senhav.classList.remove('is-invalid');
+    spanSenha.style.display = 'none';
   }
 });
 
@@ -184,18 +181,24 @@ confirmaSenhav.addEventListener('blur', function () {
 
 form.addEventListener('submit', function (event) {
   const senha = senhav.value
-  if(
+  const spanSenha = document.getElementById('span-senha')
+
+  if ((
     regexLetraMaiuscula.test(senha) &&
     regexLetraMinuscula.test(senha) &&
     regexNumero.test(senha) &&
-    regexCaracterEspecial.test(senha)
-  ){
+    regexCaracterEspecial.test(senha)) ||
+    senhav.value !== ''
+  ) {
     console.log("passou")
+    spanSenha.style.display = 'block';
+    senhav.classList.remove('is-invalid');
   }
-  else{
+  else {
     event.preventDefault();
     senhav.classList.add('is-invalid');
     form.classList.remove('was-validated');
+    spanSenha.style.display = 'none';
   }
 });
 
@@ -212,6 +215,7 @@ form.addEventListener('submit', function (event) {
 const calculaDataNasc = document.getElementById('validationCustom04');
 calculaDataNasc.addEventListener('blur', calculaIdade);
 let dataAtual = new Date();
+const dn = document.getElementById('invalid-feedback-dn');
 
 function calculaIdade() {
   let dataNasc = new Date(calculaDataNasc.value);
@@ -219,7 +223,14 @@ function calculaIdade() {
   const idadeAnos = Math.floor(idadeMilissegundos / (365.25 * 24 * 60 * 60 * 1000));
 
   if (idadeAnos < 18) {
-    calculaDataNasc.classList.add('is-invalid')
+    if(idadeAnos < 0) {
+      calculaDataNasc.classList.add('is-invalid')
+      dn.innerText = `Data Inválida`
+    } 
+    else {
+      calculaDataNasc.classList.add('is-invalid')
+      dn.innerText = `Precisa ser maior que 18 anos.`
+    }
   }
   else {
     calculaDataNasc.classList.remove('is-invalid')
@@ -237,9 +248,29 @@ form.addEventListener('submit', function (event) {
     event.preventDefault();
     calculaDataNasc.classList.add('is-invalid');
     form.classList.remove('was-validated');
-    console.log('aa');
   }
   else {
     calculaDataNasc.classList.remove('is-invalid');
   }
 });
+
+
+
+////////////////////////////////////// select
+const sex = document.getElementById('validationCustom09');
+
+form.addEventListener('submit', (event) => {
+  if (sex.value == "") {
+    event.preventDefault();
+    sex.classList.add('is-invalid')
+  }
+  else {
+    sex.classList.remove('is-invalid')
+  }
+});
+
+sex.addEventListener('blur', () => {
+  if (sex.value !== "") {
+    sex.classList.remove('is-invalid')
+  }
+})

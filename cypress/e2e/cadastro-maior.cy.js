@@ -8,7 +8,7 @@ describe('Cadastro Maior de Idade', () => {
     cy.get('[data-input="input-email"]').type('renan@gmail.com');
     cy.get('[data-input="input-senha"]').type('@Naner123');
     cy.get('[data-input="input-confirmaSenha"]').type('@Naner123');
-    cy.get('[data-input="input-celular"]').type('11111111111');
+    cy.get('[data-input="input-celular"]').type('11911111111');
     cy.get('[data-input="select-sexo"]').select('Masculino');
     cy.get('[data-input="botao-proximo1"]').click();
 

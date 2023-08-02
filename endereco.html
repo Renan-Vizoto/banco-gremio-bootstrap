@@ -31,12 +31,13 @@
         <div class="cadastro">
             <div class="cadastro__pai endereco">
                 <h2><img src="/img/house-fill.svg">Endereço</h2>
-                <form class="row g-3 needs-validation" action="/salario.html" novalidate>
+                <form class="row g-3 needs-validation" id="formulario2" action="/salario.html" novalidate>
 
                     <div class="col-md-6">
                         <label for="validationCustom10" class="form-label fs">Cep</label>
                         <input type="text" class="form-control p-2" id="validationCustom10" required data-input="cep">
                         <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Cep Inválido</div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom11" class="form-label fs">Estado</label>

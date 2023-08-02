@@ -57,22 +57,25 @@
                         <input type="date" class="form-control p-2" id="validationCustom04" required
                             data-input="input-dataNasc">
                         <div class="valid-feedback"></div>
-                        <div class="invalid-feedback">Apenas maiores de 18 anos.</div>
+                        <div class="invalid-feedback" id="invalid-feedback-dn"></div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom05" class="form-label fs">E-mail</label>
                         <input type="email" placeholder="Ex: joao@gmail.com" class="form-control p-2"
                             id="validationCustom05" required data-input="input-email">
                         <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">E-mail Inválido</div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom06" class="form-label fs">Senha</label>
                         <input type="password" class="form-control p-2" id="validationCustom06" required
-                            data-input="input-senha" minlength="8" maxlength="20">
+                            data-input="input-senha" value="">
                         <div class="valid-feedback"></div>
-                        <div class="col-auto">
+                        <div class="invalid-feedback">Deve conter entre 8-20 caracteres (@, A, a, 1).
+                        </div>
+                        <div class="col-auto" id="span-senha">
                             <span id="passwordHelpInline" class="form-text">
-                                Deve conter entre 8-20 caracteres.
+                                Deve conter entre 8-20 caracteres (@, A, a, 1).
                             </span>
                         </div>
                     </div>
@@ -85,9 +88,10 @@
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom08" class="form-label fs">Número de Celular</label>
-                        <input type="text" placeholder="Ex: (15) 11111-1111" class="form-control p-2"
+                        <input type="text" placeholder="Ex: (15) 91111-1111" class="form-control p-2"
                             id="validationCustom08" required data-input="input-celular" minlength="15">
                         <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Número inválido.</div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom09" class="form-label fs">Sexo</label>
@@ -95,9 +99,10 @@
                             <option selected disabled value="">Escolha...</option>
                             <option value="1">Feminino</option>
                             <option value="2">Masculino</option>
+                            <option value="3">Outro</option>
                         </select>
                         <div class="invalid-feedback">
-                            Please select a valid state.
+                            Selecione o sexo.
                         </div>
                     </div>
 
