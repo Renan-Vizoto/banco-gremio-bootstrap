@@ -110,7 +110,7 @@ form.addEventListener('submit', (event) => {
 
 //////////////////////////////////////////////////////////////////  email
 const email = document.getElementById('validationCustom05')
-email.addEventListener('keypress', (event) => {
+email.addEventListener('keypress', () => {
   emailTest = email.value
   if (/[\s]/.test(emailTest)) {
     email.classList.add('is-invalid')
@@ -119,6 +119,16 @@ email.addEventListener('keypress', (event) => {
     email.classList.remove('is-invalid')
   }
 });
+
+email.addEventListener('blur', () => {
+  emailTest = email.value
+  if (emailTest.indexOf('@') == -1) {
+    email.classList.add('is-invalid')
+  }
+  else {
+    email.classList.remove('is-invalid')
+  }
+})
 
 
 //////////////////////////////////////////////////////////////////  data
@@ -179,9 +189,9 @@ confirmaSenhav.addEventListener('blur', function () {
 
 })
 
+const spanSenha = document.getElementById('span-senha')
 form.addEventListener('submit', function (event) {
   const senha = senhav.value
-  const spanSenha = document.getElementById('span-senha')
 
   if ((
     regexLetraMaiuscula.test(senha) &&
@@ -206,7 +216,9 @@ form.addEventListener('submit', function (event) {
   if (confirmaSenhav.value !== senhav.value || senhav.value.length < 8 || senhav.value.length > 20) {
     event.preventDefault();
     confirmaSenhav.classList.add('is-invalid');
-    form.classList.remove('was-validated')
+    senhav.classList.add('is-invalid');
+    form.classList.remove('was-validated');
+    spanSenha.style.display = 'none';
   }
 });
 
@@ -223,10 +235,10 @@ function calculaIdade() {
   const idadeAnos = Math.floor(idadeMilissegundos / (365.25 * 24 * 60 * 60 * 1000));
 
   if (idadeAnos < 18) {
-    if(idadeAnos < 0) {
+    if (idadeAnos < 0) {
       calculaDataNasc.classList.add('is-invalid')
       dn.innerText = `Data Inválida`
-    } 
+    }
     else {
       calculaDataNasc.classList.add('is-invalid')
       dn.innerText = `Precisa ser maior que 18 anos.`
